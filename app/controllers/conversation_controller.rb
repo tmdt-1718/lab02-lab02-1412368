@@ -1,4 +1,5 @@
 class ConversationController < ApplicationController
+	before_action :authenticate_user!
 	def index
 		@Conversation = current_user.mailbox.conversations
 	end
